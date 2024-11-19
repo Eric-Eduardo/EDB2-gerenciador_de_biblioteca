@@ -1,0 +1,47 @@
+# Arquivos de compilação
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dll
+*.dylib
+
+# Diretórios de build
+/build/
+/bin/
+/lib/
+/dist/
+
+# Arquivos de depuração
+*.d
+*.gch
+*.gcno
+*.gcda
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.~*
+
+# Configurações do editor/IDE
+.vscode/
+.idea/
+*.code-workspace
+*.user
+
+# Makefiles e arquivos relacionados
+*.depend
+*.mk
+
+# Arquivos gerados automaticamente
+tags
+TAGS
+*.orig
+
+# Caches
+*.cache

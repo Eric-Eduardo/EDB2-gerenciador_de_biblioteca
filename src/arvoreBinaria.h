@@ -6,8 +6,8 @@
 typedef struct No {
   int key;
   Livro* livro;
-  struct arv* left;
-  struct arv* right;
+  struct No* left;
+  struct No* right;
 } No;
 
 No* inicializar_arvore();

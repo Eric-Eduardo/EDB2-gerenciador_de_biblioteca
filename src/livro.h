@@ -16,6 +16,7 @@ typedef struct Livro
 
 } Livro;
 
-Livro newbook(int codigo, char titulo[], char autor[], char genero[], int ano, char editora[], int numPag);
+Livro* newlivro(int codigo, char titulo[], char autor[], char genero[], int ano, char editora[], int numPag);
+void mostrarLivro(Livro* livro);
 
 #endif

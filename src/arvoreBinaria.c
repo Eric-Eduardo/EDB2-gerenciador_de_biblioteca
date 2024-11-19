@@ -1,5 +1,5 @@
 #include "arvoreBinaria.h"
-
+#include "livro.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,16 +13,31 @@ void inserir_livro(No **raiz, Livro livro) {
         (*raiz)->left = NULL;
         (*raiz)->right = NULL;
     } else if (livro.codigo < (*raiz)->livro->codigo) {
-        inserir_livro(((*raiz)->left), livro);
+        inserir_livro(&((*raiz)->left), livro);
     } else {
-        inserir_livro(((*raiz)->right), livro);
+        inserir_livro(&((*raiz)->right), livro);
     }
+
+    printf("Livro inserido");
 }
 
 void buscar_por_genero(No *raiz, char genero[]) {}
 
 No *carregar_livros(char *nome_arquivo, No *raiz) { return NULL; }
 
-void exibir_arvore(No *raiz) {}
+void exibir_arvore(No *raiz) {
+    if (raiz != NULL) {
+        mostrarLivro(raiz->livro);
+        exibir_arvore(raiz->left);
+        exibir_arvore(raiz->right);
+    }
+}
 
-void liberar_arvore(No *raiz) {}
+void liberar_arvore(No *raiz) {
+    if (raiz != NULL) {
+        liberar_arvore(raiz->left);
+        liberar_arvore(raiz->right);
+        free(raiz->livro);
+        free(raiz);
+    }
+}

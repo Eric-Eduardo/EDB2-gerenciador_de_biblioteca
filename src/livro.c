@@ -3,7 +3,7 @@
 #include <string.h>
 #include "livro.h"
 
-Livro* newbook(int codigo, char titulo[], char autor[], char genero[], int ano, char editora[], int numPag) {
+Livro* newlivro(int codigo, char titulo[], char autor[], char genero[], int ano, char editora[], int numPag) {
     Livro* book = (Livro*) malloc(sizeof(Livro));
 
     book->codigo = codigo;
@@ -15,4 +15,8 @@ Livro* newbook(int codigo, char titulo[], char autor[], char genero[], int ano, 
     book->numPag = numPag;
 
     return book;
+}
+
+void mostrarLivro(Livro* livro) {
+    printf("Nome: %s\nCodigo: %d\nAutor: %s\nGenero: %s\nAno: %d\nEditora: %s\nN. Pag: %d\n", livro->titulo, livro->autor, livro->genero, livro->ano, livro->editora, livro->numPag);
 }
