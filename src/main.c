@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
 
 #include "arvoreBinaria.h"
 #include "livro.h"
@@ -7,17 +8,12 @@
 int main() {
     No* raiz = inicializar_arvore();
     Livro* l1 = newlivro(123, "Título 1", "Autor 1", "Aventura", 2015, "Editora 1", 38);
-    // Livro* l2 = newlivro(100, "Título 2", "Autor 2", "Aventura", 2016, "Editora 1", 40);
-    // Livro* l3 = newlivro(500, "Título 3", "Autor 3", "Aventura", 2017, "Editora 1", 127);
-    // Livro* l4 = newlivro(400, "Título 4", "Autor 4", "Aventura", 2018, "Editora 1", 50);
-    // Livro* l5 = newlivro(600, "Título 5", "Autor 5", "Aventura", 2018, "Editora 1", 70);
 
-    inserir_livro(&raiz, *l1);
+    inserir_livro(raiz, l1);
 
-    exibir_arvore(raiz);
+    printf("%d", raiz->key);
 
     liberar_arvore(raiz);
-
 
     /*
     if (raiz == NULL) {
