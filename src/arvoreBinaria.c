@@ -31,7 +31,7 @@ void buscar_por_genero(No *raiz, char genero[]) {
     }
 
     if (strcmp(raiz->livro.genero, genero) == 0) {
-        mostrarLivro(&(raiz->livro)); // Exibe as informações do livro
+        mostrarLivro(&(raiz->livro));
     }
 
     buscar_por_genero(raiz->left, genero);
