@@ -25,7 +25,19 @@ void inserir_livro(No** raiz, Livro livro) {
     }
 }
 
-void buscar_por_genero(No *raiz, char genero[]) {}
+void buscar_por_genero(No *raiz, char genero[]) {
+    if (raiz == NULL) {
+        return;
+    }
+
+    if (strcmp(raiz->livro.genero, genero) == 0) {
+        mostrarLivro(&(raiz->livro)); // Exibe as informações do livro
+    }
+
+    buscar_por_genero(raiz->left, genero);
+
+    buscar_por_genero(raiz->right, genero);
+}
 
 No *carregar_livros(char *nome_arquivo, No *raiz) {
     FILE *arquivo = fopen(nome_arquivo, "r");
