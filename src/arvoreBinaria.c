@@ -8,20 +8,20 @@
 
 No *inicializar_arvore() { return NULL; }
 
-void inserir_livro(No *raiz, Livro* livro) {
-    if (raiz == NULL) {
+void inserir_livro(No** raiz, Livro livro) {
+    if (*raiz == NULL) {
         printf("\nInserindo livro");
-        raiz = (No *)malloc(sizeof(No));
-        raiz->livro = livro;
+        *raiz = (No*)malloc(sizeof(No));
+        (*raiz)->livro = livro;
         raiz->key = livro->codigo;
-        raiz->left = NULL;
-        raiz->right = NULL;
-    } else if (livro->codigo < raiz->livro->codigo) {
+        (*raiz)->left = NULL;
+        (*raiz)->right = NULL;
+    } else if (livro.codigo < (*raiz)->livro.codigo) {
         printf("\nInserindo na esquerda");
-        inserir_livro(raiz->left, livro);
+        inserir_livro(&((*raiz)->left), livro);
     } else {
         printf("\nInserindo na direita");
-        inserir_livro(raiz->right, livro);
+        inserir_livro(&((*raiz)->right), livro);
     }
 }
 
