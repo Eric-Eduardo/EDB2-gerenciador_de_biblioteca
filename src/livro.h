@@ -4,7 +4,7 @@
 #ifndef LIVRO_H
 #define LIVRO_H
 
-typedef struct Livro
+typedef struct livro
 {
     int codigo;
     char titulo[100];

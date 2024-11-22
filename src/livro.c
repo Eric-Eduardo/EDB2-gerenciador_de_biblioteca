@@ -20,9 +20,9 @@ Livro* newlivro(int codigo, char titulo[], char autor[], char genero[], int ano,
 
 void mostrarLivro(Livro* livro) {
     if (livro == NULL)
-        printf("Dados vazios...");
+        printf("Dados vazios...\n");
     else {
-        printf("\nDados:\n");
-        printf("Nome: %s\nCodigo: %d\nAutor: %s\nGenero: %s\nAno: %d\nEditora: %s\nN. Pag: %d\n", livro->titulo, livro->codigo, livro->autor, livro->genero, livro->ano, livro->editora, livro->numPag);
+        printf("\nNome: %s\nCodigo: %d\nAutor: %s\nGenero: %s\nAno: %d\nEditora: %s\nN. Pag: %d\n", livro->titulo, livro->codigo, livro->autor, livro->genero, livro->ano, livro->editora, livro->numPag);
+        // printf("%s", livro->titulo);
     }
 }
