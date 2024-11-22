@@ -28,25 +28,7 @@ void inserir_livro(No **raiz, Livro *livro) {
     }
 }
 
-// void inserir_livro(No **raiz, Livro livro_) {
-//     if (*raiz == NULL) {
-//         Livro* livro = newlivro(livro_.codigo, livro_.titulo, livro_.autor, livro_.genero, livro_.ano, livro_.editora, livro_.numPag);
-//         // printf("\nInserindo livro de %s\n", livro->autor);
-//         *raiz = (No *)malloc(sizeof(No));
-//         (*raiz)->livro = livro;
-//         (*raiz)->key = livro->codigo;
-//         (*raiz)->left = NULL;
-//         (*raiz)->right = NULL;
-//     } else if (livro_.codigo < (*raiz)->livro->codigo) {
-//         // printf("\nInserindo na esquerda");
-//         inserir_livro(&((*raiz)->left), livro_);
-//     } else {
-//         // printf("\nInserindo na direita");
-//         inserir_livro(&((*raiz)->right), livro_);
-//     }
-// }
 
-/*
 void buscar_por_genero(No *raiz, char genero[]) {
     if (raiz == NULL) {
         return;
@@ -60,10 +42,9 @@ void buscar_por_genero(No *raiz, char genero[]) {
 
     buscar_por_genero(raiz->right, genero);
 }
-*/
+
 
 No *carregar_livros(char *nome_arquivo, No *raiz) {
-    printf("Tentando carregar\n");
 
     FILE *arquivo = fopen(nome_arquivo, "r");
     if (arquivo == NULL) {

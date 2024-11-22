@@ -13,7 +13,14 @@ int main() {
     inserir_livro(&raiz, livro);
 
     carregar_livros("dados.csv", raiz);
+
+
+    printf("==================\nDADOS ARMAZENADOS\n==================\n");
     exibir_arvore(raiz);
+
+    
+    printf("==================\nROMANCES\n==================\n");
+    buscar_por_genero(raiz, "Romance");
 
     liberar_arvore(raiz);
     
